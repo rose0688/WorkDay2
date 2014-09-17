@@ -7,13 +7,27 @@ Public Class Form1
 
         Dim st1 As String = txtFirstNum.Text
         Dim st2 As String = txtSecondNum.Text
+        If IsNumeric(st1) And IsNumeric(st2) Then
+            num1 = CDbl(st1)
+            num2 = CDbl(st2)
+        Else
+            MessageBox.Show("Check your input: only numbers are accepted")
+        End If
 
-        num1 = CDbl(st1)
-        num2 = CDbl(st2)
+
 
         ' Your code here
+        If num1 > num2 Then
+            largerNum = num1
+            txtResult.Text = "The larger number is " & largerNum
+        ElseIf num1 < num2 Then
+            largerNum = num2
+            txtResult.Text = "The larger number is " & largerNum
+        Else
+            txtResult.Text = "They are equal"
+        End If
 
-        txtResult.Text = "Not implemented yet"
+
     End Sub
 
 End Class
